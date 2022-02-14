@@ -32,12 +32,12 @@ const Jacketspage = () =>(
 function App() {
   return (
       <Routes>
-        <Route path={"/"} element={<HomePage />} />
-        <Route path={"/shop/hats"} element={<Hatspage />} />
-        <Route path={"shop/jackets"} element={<Jacketspage />} />
-        <Route path={"shop/sneakers"} element={<Sneakerspage />} />
-        <Route path={"shop/mens"} element={<Menspage />} />
-        <Route path={"shop/womens"} element={<Womenspage />} />
+        <Route path={"/crwn-clothing"} element={<HomePage />} />
+        <Route path={"/crwn-clothing/shop/hats"} element={<Hatspage />} />
+        <Route path={"/crwn-clothing/shop/jackets"} element={<Jacketspage />} />
+        <Route path={"/crwn-clothing/shop/sneakers"} element={<Sneakerspage />} />
+        <Route path={"/crwn-clothing/shop/mens"} element={<Menspage />} />
+        <Route path={"/crwn-clothing/shop/womens"} element={<Womenspage />} />
       </Routes>
   );
 }
