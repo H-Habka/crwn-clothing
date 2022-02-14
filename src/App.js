@@ -1,30 +1,31 @@
 import React from 'react';
-import {Routes, Route} from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import HomePage from './pages/homepage/homePage.component';
 import ShopPage from './pages/shoppage/shop.component';
+import Header from './components/header/header.component';
 
-const Hatspage = () =>(
+const Hatspage = () => (
   <div>
     <h1>HATS</h1>
   </div>
 )
-const Womenspage = () =>(
+const Womenspage = () => (
   <div>
     <h1>womens</h1>
   </div>
 )
-const Menspage = () =>(
+const Menspage = () => (
   <div>
     <h1>Mens</h1>
   </div>
 )
-const Sneakerspage = () =>(
+const Sneakerspage = () => (
   <div>
     <h1>sneakers</h1>
   </div>
 )
-const Jacketspage = () =>(
+const Jacketspage = () => (
   <div>
     <h1>jackets</h1>
   </div>
@@ -32,6 +33,8 @@ const Jacketspage = () =>(
 
 function App() {
   return (
+    <div>
+      <Header />
       <Routes>
         <Route path={"/crwn-clothing"} element={<HomePage />} />
         <Route path={"/crwn-clothing/shop/hats"} element={<Hatspage />} />
@@ -41,7 +44,10 @@ function App() {
         <Route path={"/crwn-clothing/shop/womens"} element={<Womenspage />} />
         <Route path={"/crwn-clothing/shop"} element={<ShopPage />} />
       </Routes>
+    </div>
   );
+
+
 }
 
 export default App;
