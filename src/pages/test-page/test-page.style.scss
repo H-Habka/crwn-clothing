@@ -1,0 +1,13 @@
+.collection-preview .preview{
+    flex-wrap: wrap;
+    justify-content: start;
+}
+.collection-item{
+    margin: 10px;
+    margin-bottom: 30px;
+   
+
+    .image{
+        border-radius: 30px;
+    }
+}

@@ -2,6 +2,11 @@ import React from 'react';
 import './sign-in.style.scss';
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
+import { signInWithGoogle } from '../../firebase/firebase.utils';
+// import { useNavigate } from 'react-router-dom';
+// import GoogleLogin from 'react-google-login';
+
+
 
 class SignIn extends React.Component {
     constructor(){
@@ -12,6 +17,10 @@ class SignIn extends React.Component {
             password: ''
         }
     }
+
+    // ResponseGoogle = (res)=>{
+
+    // }
 
     handleSubmit = event => {
         event.preventDefault();
@@ -48,7 +57,24 @@ class SignIn extends React.Component {
                         handleChange={this.handleChange}
                         required />
 
-                    <CustomButton type="submit" value='Submit Form'> Sign in</CustomButton>
+
+                    <div className='buttons'>
+                        <CustomButton type="submit"> Sign in</CustomButton>
+                        <CustomButton  onClick={signInWithGoogle} isGoogleSignIn> Sign in with google</CustomButton>
+                    </div>
+                    {/* <GoogleLogin 
+                        clientId={process.env.REACT_APP_GOOGLE_API_TOKEN}
+                        render={(renderProps) => (
+                            <CustomButton
+                                type="button"
+                                onClick={renderProps.onClick}
+                            >hello</CustomButton>
+                        )}
+                        onSuccess={this.ResponseGoogle}
+                        onFailure={this.ResponseGoogle}
+                        cookiePolicy="single_host_origin"
+                        /> */}
+                    
                 </form>
             </div>
         )
