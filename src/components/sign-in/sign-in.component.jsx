@@ -2,7 +2,9 @@ import React from 'react';
 import './sign-in.style.scss';
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
-import { signInWithGoogle } from '../../firebase/firebase.utils';
+import { auth, signInWithGoogle } from '../../firebase/firebase.utils';
+
+
 // import { useNavigate } from 'react-router-dom';
 // import GoogleLogin from 'react-google-login';
 
@@ -22,14 +24,23 @@ class SignIn extends React.Component {
 
     // }
 
-    handleSubmit = event => {
+    handleSubmit = async event => {
         event.preventDefault();
+        const {email, password} = this.state
+
+        try{
+            await auth.signInWithEmailAndPassword(email,password)
+        }
+        catch(error){
+            console.error(error);
+        }
+
+
 
         this.setState({email : '' , password : ''})
     }
 
     handleChange = event => {
-        event.preventDefault();
         const { value, name } = event.target;
 
         this.setState({ [name] : value})
@@ -59,8 +70,8 @@ class SignIn extends React.Component {
 
 
                     <div className='buttons'>
-                        <CustomButton type="submit"> Sign in</CustomButton>
-                        <CustomButton  onClick={signInWithGoogle} isGoogleSignIn> Sign in with google</CustomButton>
+                        <CustomButton key={1} > Sign in</CustomButton>
+                        <CustomButton   key={2}  onClick={signInWithGoogle} isGoogleSignIn type="button"> Sign in with google</CustomButton>
                     </div>
                     {/* <GoogleLogin 
                         clientId={process.env.REACT_APP_GOOGLE_API_TOKEN}
