@@ -4,13 +4,12 @@ import { connect } from "react-redux";
 import CartItem from "../cart-item/CartItem";
 import { cartItems } from "../../redux/cart/cart-selectors";
 import { createStructuredSelector } from "reselect";
-import { useNavigate , Link} from "react-router-dom";
+import { Link} from "react-router-dom";
 import { toggleCartHidden } from "../../redux/cart/cart-actions";
 
 
 const CartDropDown = ({cartItems, toggleCartHidden}) => {
 
-  const navigate = useNavigate()
   return(
   <div className='cart-dropdown'>
     <div className="cart-items">

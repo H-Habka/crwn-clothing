@@ -11,9 +11,14 @@ import {setCurrentUser} from './redux/user/User-actions'
 import { createStructuredSelector } from 'reselect';
 import { selectCurrentUser } from './redux/user/user-selector';
 import CheckoutPage from './pages/checkout/CheckoutPage';
+import styled from 'styled-components'
 
-
-
+const Test = styled.div`
+    color: red;
+    width: 200px;
+    height: 200px;
+    background: yellow; 
+`
 
 class App extends React.Component {
 
@@ -53,7 +58,7 @@ class App extends React.Component {
                 <Header />
                 <Routes>
                     <Route path={"/crwn-clothing"} element={<HomePage />} />
-                    <Route path={"/crwn-clothing/shop"} element={<ShopPage />} />
+                    <Route path={"/crwn-clothing/shop/*"} element={<ShopPage />} />
                     <Route path={"/crwn-clothing/signin"} element={(currentUser ? <Navigate to="/crwn-clothing" />: <SignInAndSignUp />)} />
                     <Route path={"/crwn-clothing/checkout"} element={<CheckoutPage />} />
                 </Routes>

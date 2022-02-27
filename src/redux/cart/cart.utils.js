@@ -13,14 +13,14 @@ export const addItemCart =(cartItems, cartItemToAdd) =>{
 
 export const deleteItemCart = (cartItems, cartItemToDelete) => {
     return (
-        cartItems.filter(item => item.id != cartItemToDelete.id)
+        cartItems.filter(item => item.id !== cartItemToDelete.id)
     )
 }
 
 export const changeQuantity = (cartItems,{itemToChangeQuantity, direction}) => {
     return (cartItems.map(item => {
         if(item.id === itemToChangeQuantity.id){
-            let newQuantity = (direction == 'inc')? item.quantity + 1: item.quantity - 1
+            let newQuantity = (direction === 'inc')? item.quantity + 1: item.quantity - 1
             return {...item , quantity : (newQuantity<=0)?0:newQuantity}
         }else{
             return item
