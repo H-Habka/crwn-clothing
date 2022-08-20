@@ -7,28 +7,20 @@ import StripeButton from '../../components/stripe-button/stripe-button'
 
 
 const CheckoutPage = ({TotalPrice, cartItems}) =>(
-    <div className="checkout-page">
-      <div className="checkout-header">
-        <div className="header-block">
-          <span>Product</span>
-        </div>
-        <div className="header-block">
-          <span>Description</span>
-        </div>
-        <div className="header-block">
-          <span>Quantity</span>
-        </div>
-        <div className="header-block">
-          <span>Price</span>
-        </div>
-        <div className="header-block">
-          <span>Remove</span>
-        </div>
+    <div className="lg:px-32 px-2 py-6 min-w-[590px]">
+      <div className="grid grid-cols-5 justify-around">
+          <span className="text-center">Product</span>
+          <span className="text-center">Description</span>
+          <span className="text-center">Quantity</span>
+          <span className="text-center">Price</span>
+          <span className="text-center">Remove</span>
       </div>
+      <div className="flex flex-col gap-2">
         {
           cartItems.map(item => <CheckoutItem key = {item.id} cartItem = {item} />)
         }
-        <div className="total">
+      </div>
+        <div className="">
           <span>Total: ${TotalPrice}</span>
         </div>
         <StripeButton price={TotalPrice}/>
