@@ -14,7 +14,7 @@ const Collection = () => {
   return (
     <>
       <h1 className="collection-title">{title}</h1>
-      <div className='items-container'>
+      <div className='gap-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
         {
           items.map(item => (
             <CollectionItem key={item.id} item={item}/>

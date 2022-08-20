@@ -54,12 +54,12 @@ class App extends React.Component {
     render(){
         const {currentUser} = this.props
         return (
-            <div>
+            <div className='px-8 py-4'>
                 <Header />
                 <Routes>
-                    <Route path={"/crwn-clothing"} element={<HomePage />} />
+                    <Route path={"/crwn-clothing/"} element={<HomePage />} />
                     <Route path={"/crwn-clothing/shop/*"} element={<ShopPage />} />
-                    <Route path={"/crwn-clothing/signin"} element={(currentUser ? <Navigate to="/crwn-clothing" />: <SignInAndSignUp />)} />
+                    <Route path={"/crwn-clothing/signin"} element={(currentUser ? <Navigate to="/" />: <SignInAndSignUp />)} />
                     <Route path={"/crwn-clothing/checkout"} element={<CheckoutPage />} />
                 </Routes>
             </div>

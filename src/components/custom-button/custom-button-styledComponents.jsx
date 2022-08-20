@@ -1,4 +1,4 @@
-import styled, {css} from 'styled-components'
+import styled, { css } from "styled-components";
 
 const googleSignInStyles = css`
     background-color: #4285f4;
@@ -9,7 +9,7 @@ const googleSignInStyles = css`
         border:none;
       }
     }
-`
+`;
 
 const convertedButtonStyle = css`
     background-color: white;
@@ -23,14 +23,18 @@ const convertedButtonStyle = css`
         border: none;
       }
     }
-`
+`;
 
 const customButtonStyles = (props) => {
-    return props.isGoogleSignIn ? googleSignInStyles
-    : props.inverted? convertedButtonStyle: null
-}
+    return props.isGoogleSignIn
+        ? googleSignInStyles
+        : props.inverted
+        ? convertedButtonStyle
+        : null;
+};
 
 export const CustomButtonJSX = styled.button`
+    flex:1;
     min-width: 167px;
     width: auto;
     height: 50px;
@@ -57,4 +61,4 @@ export const CustomButtonJSX = styled.button`
 
     ${customButtonStyles}
 
-`
+`;

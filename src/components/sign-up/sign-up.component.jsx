@@ -53,9 +53,11 @@ class SignUp extends React.Component {
     render() {
         const {displayName , email, password, confirmPassword}  = this.state;
         return (
-            <div className="sign-up">
-                <h2 className='title'>I do not have an account</h2>
-                <span> sign up with your email and password</span>
+            <div className="flex flex-col gap-4 w-full">
+                <div className='flex flex-col gap-2'>
+                    <h2 className='title'>I do not have an account</h2>
+                    <span> sign up with your email and password</span>
+                </div>
                 <form onSubmit={this.handleSubmit} className='sign-up-form'>
                     <FormInput 
                         name='displayName'
@@ -89,7 +91,9 @@ class SignUp extends React.Component {
                         handleChange={this.handleChange}
                         required />
 
-                    <CustomButton type="submit" value='Submit Form'> Sign Up</CustomButton>
+                    <div className='flex justify-center'>
+                        <CustomButton type="submit" value='Submit Form'> Sign Up</CustomButton>
+                    </div>
                 </form>
             </div>
         )

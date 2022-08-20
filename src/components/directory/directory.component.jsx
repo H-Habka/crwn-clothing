@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 
 const Directory = ({ sections }) => (
-  <div className="directory-menu">
+  <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:gap-2">
     {
       sections.map(({ id, ...otherComponent }) => (
         <MenuItem key={id} {...otherComponent} />

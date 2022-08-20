@@ -3,7 +3,7 @@ import "./homePage.style.scss";
 import Directory from "../../components/directory/directory.component";
 
 const HomePage = () =>(
-    <div className="homepage">
+    <div className="md:px-20 py-6 ">
         <Directory />
     </div>
 )

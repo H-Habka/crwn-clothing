@@ -48,9 +48,11 @@ class SignIn extends React.Component {
 
     render() {
         return (
-            <div className="sign-in">
-                <h2 className='title'>I already have account</h2>
-                <span> sign in with your email and password</span>
+            <div className="flex flex-col gap-4 w-full">
+                <div className='flex flex-col gap-2 '>
+                    <h2 className='title'>I already have account</h2>
+                    <span> sign in with your email and password</span>
+                </div>
                 <form action="" onSubmit={this.handleSubmit}>
                     <FormInput 
                         name='email'
@@ -69,7 +71,7 @@ class SignIn extends React.Component {
                         required />
 
 
-                    <div className='buttons'>
+                    <div className='flex flex-col sm:flex-row justify-between gap-1'>
                         <CustomButton key={1} > Sign in</CustomButton>
                         <CustomButton   key={2}  onClick={signInWithGoogle} isGoogleSignIn type="button"> Sign in with google</CustomButton>
                     </div>

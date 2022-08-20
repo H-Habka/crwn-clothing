@@ -3,7 +3,7 @@ import './form-input.style.scss';
 
 const FormInput = ({handleChange, lable , ...others}) => (
 
-    <div className='group'>
+    <div className='group1'>
         <input type="email" className="form-input" onChange={handleChange} {...others} />
         {
             lable?
